@@ -6,7 +6,7 @@ O projeto foi criado com foco em uma interface moderna, responsiva e intuitiva, 
 
 ## 🌐 Projeto Online
 
-👉 **Acesse o portfólio:** [Link do projeto]
+👉 **Acesse o portfólio:** https://portfolio-gabriel-tau.vercel.app/
 
 ## ✨ Funcionalidades
 
