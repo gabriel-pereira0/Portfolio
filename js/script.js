@@ -25,11 +25,15 @@ function initNavbar() {
 
   // Toggle mobile menu open/closed
   function toggleMenu(forceClose) {
-    const shouldOpen = forceClose === true ? false : !navLinks.classList.contains('open');
+    const shouldOpen =
+      forceClose === true ? false : !navLinks.classList.contains('open');
     navLinks.classList.toggle('open', shouldOpen);
     menuToggle.classList.toggle('open', shouldOpen);
     menuToggle.setAttribute('aria-expanded', String(shouldOpen));
-    menuToggle.setAttribute('aria-label', shouldOpen ? 'Close menu' : 'Open menu');
+    menuToggle.setAttribute(
+      'aria-label',
+      shouldOpen ? 'Close menu' : 'Open menu',
+    );
   }
 
   menuToggle.addEventListener('click', () => toggleMenu());
@@ -98,7 +102,7 @@ function initActiveNavHighlight() {
       // Section counts as "active" once it crosses the middle of the viewport
       rootMargin: '-40% 0px -55% 0px',
       threshold: 0,
-    }
+    },
   );
 
   sections.forEach((section) => observer.observe(section));
@@ -126,7 +130,7 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
 
   revealEls.forEach((el) => observer.observe(el));
