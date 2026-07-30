@@ -77,35 +77,34 @@ function initSmoothScroll() {
    3. ACTIVE NAV LINK highlighting based on the section in view
    ===================================================================== */
 function initActiveNavHighlight() {
-  const sections = document.querySelectorAll('main section[id]');
-  const navLinkMap = new Map();
+  const sections = document.querySelectorAll('main section[id], main[id]');
+  const navLinks = document.querySelectorAll('.nav-link[data-nav]');
 
-  document.querySelectorAll('.nav-link[data-nav]').forEach((link) => {
-    const id = link.getAttribute('href');
-    if (id) navLinkMap.set(id, link);
-  });
+  if (!sections.length || !navLinks.length) return;
 
-  if (!sections.length || !navLinkMap.size) return;
+  function updateActiveSection() {
+    let currentSection = '';
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-        const id = `#${entry.target.id}`;
-        navLinkMap.forEach((link) => link.classList.remove('active-link'));
-        const activeLink = navLinkMap.get(id);
-        if (activeLink) activeLink.classList.add('active-link');
-      });
-    },
-    {
-      // Section counts as "active" once it crosses the middle of the viewport
-      rootMargin: '-40% 0px -55% 0px',
-      threshold: 0,
-    },
-  );
+      if (window.scrollY >= sectionTop - 200) {
+        currentSection = section.id;
+      }
+    });
 
-  sections.forEach((section) => observer.observe(section));
+    navLinks.forEach((link) => {
+      link.classList.remove('active-link');
+
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active-link');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveSection);
+  updateActiveSection();
 }
 
 /* =====================================================================
