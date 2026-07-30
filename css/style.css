@@ -21,13 +21,21 @@
   --color-border: rgba(184, 196, 214, 0.12);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
 
   /* Typography */
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -48,7 +56,8 @@
   --transition-fast: 0.2s ease;
   --transition-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 0 1px rgba(59, 130, 246, 0.25), 0 12px 40px rgba(59, 130, 246, 0.18);
+  --shadow-glow:
+    0 0 0 1px rgba(59, 130, 246, 0.25), 0 12px 40px rgba(59, 130, 246, 0.18);
 }
 
 /* =====================================================================
@@ -74,8 +83,16 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   background-image:
-    radial-gradient(circle at 15% 0%, rgba(59, 130, 246, 0.12), transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.08), transparent 40%);
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(59, 130, 246, 0.12),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(249, 115, 22, 0.08),
+      transparent 40%
+    );
 }
 
 img {
@@ -192,7 +209,9 @@ button:focus-visible {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.in-view {
@@ -212,7 +231,11 @@ button:focus-visible {
   font-size: 0.95rem;
   padding: 0.85rem 1.6rem;
   border-radius: var(--radius-sm);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
   white-space: nowrap;
 }
 
@@ -274,7 +297,9 @@ button:focus-visible {
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-fast), background var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
 }
 
 .navbar.scrolled {
@@ -321,7 +346,7 @@ button:focus-visible {
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -369,7 +394,9 @@ button:focus-visible {
   height: 2px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .menu-toggle.open .menu-bar:nth-child(1) {
@@ -623,7 +650,9 @@ button:focus-visible {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .about-code-card:hover {
@@ -709,7 +738,11 @@ button:focus-visible {
   border-radius: var(--radius-md);
   padding: var(--space-lg) var(--space-md);
   text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base);
 }
 
 .tech-card:hover {
@@ -758,7 +791,10 @@ button:focus-visible {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .project-card:hover {
@@ -772,16 +808,28 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--thumb-a, var(--color-primary)) 0%, var(--thumb-b, var(--color-secondary)) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--thumb-a, var(--color-primary)) 0%,
+    var(--thumb-b, var(--color-secondary)) 100%
+  );
   position: relative;
   overflow: hidden;
 }
 
 .project-thumb::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: rgba(7, 20, 38, 0.25);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: transform var(--transition-base) ease;
+  display: block;
 }
 
 .project-thumb svg {
@@ -848,7 +896,10 @@ button:focus-visible {
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
-  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .icon-btn svg {
@@ -876,7 +927,7 @@ button:focus-visible {
 }
 
 .contact-card::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 320px;
   height: 320px;
@@ -922,7 +973,11 @@ button:focus-visible {
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   font-weight: 500;
-  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    background var(--transition-fast);
 }
 
 .contact-link:hover {
@@ -990,7 +1045,10 @@ button:focus-visible {
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-  transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    visibility var(--transition-base);
   z-index: 400;
 }
 
@@ -1043,7 +1101,9 @@ button:focus-visible {
     padding: var(--space-sm) var(--space-md) var(--space-lg);
     transform: translateY(-130%);
     opacity: 0;
-    transition: transform var(--transition-base), opacity var(--transition-base);
+    transition:
+      transform var(--transition-base),
+      opacity var(--transition-base);
   }
 
   .nav-links.open {
