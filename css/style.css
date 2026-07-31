@@ -425,7 +425,7 @@ main#home {
   align-items: center;
   padding-top: var(--navbar-height);
   position: relative;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-xs);
 }
 
 .hero-grid {
@@ -444,7 +444,7 @@ main#home {
 
 .hero-photo-frame {
   position: relative;
-  width: min(320px, 60vw);
+  width: min(320px, 50vw);
   aspect-ratio: 1 / 1;
 }
 
@@ -545,7 +545,7 @@ main#home {
 .hero-description {
   color: var(--color-text-secondary);
   max-width: 55ch;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .hero-actions {
@@ -556,7 +556,7 @@ main#home {
 
 .scroll-indicator {
   position: absolute;
-  bottom: var(--space-md);
+  bottom: var(--space-xl);
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.7;
