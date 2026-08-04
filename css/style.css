@@ -1221,6 +1221,10 @@ main#home {
     width: min(240px, 50vw);
   }
 
+  .hero-title {
+    padding-bottom: var(--space-sm);
+  }
+
   .hero-actions {
     flex-direction: column;
     width: 100%;
@@ -1244,17 +1248,13 @@ main#home {
     font-size: 1rem;
   }
 
-  .scroll-mouse {
-    opacity: 0;
-    visibility: hidden;
+  .scroll-mouse,
+  .hero-subtitle {
+    display: none;
   }
 }
 
 @media (max-width: 344px) {
-  .hero-photo-frame {
-    width: min(240px, 40vw);
-  }
-
   .nav-container {
     padding-inline: var(--space-lg);
   }
