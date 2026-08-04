@@ -60,6 +60,13 @@
     0 0 0 1px rgba(59, 130, 246, 0.25), 0 12px 40px rgba(59, 130, 246, 0.18);
 }
 
+/* Safe Bottom */
+@supports (padding: max(0px)) {
+  :root {
+    --safe-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
 /* =====================================================================
    2. RESET & BASE
    ===================================================================== */
@@ -426,6 +433,7 @@ main#home {
   padding-top: var(--navbar-height);
   position: relative;
   margin-top: var(--space-xs);
+  padding-bottom: var(--safe-bottom);
 }
 
 .hero-grid {
@@ -444,7 +452,7 @@ main#home {
 
 .hero-photo-frame {
   position: relative;
-  width: min(320px, 50vw);
+  width: min(320px, 60vw);
   aspect-ratio: 1 / 1;
 }
 
@@ -1165,6 +1173,11 @@ main#home {
     max-width: 380px;
     margin-inline: auto;
   }
+
+  .scroll-mouse {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* Small tablets / large phones */
@@ -1185,12 +1198,25 @@ main#home {
     gap: var(--space-md);
     justify-content: center;
   }
+
+  .scroll-mouse {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* Phones */
 @media (max-width: 480px) {
   :root {
     --space-2xl: 4.5rem;
+  }
+
+  .hero section {
+    padding-bottom: var(--safe-bottom);
+  }
+
+  .hero-photo-frame {
+    width: min(240px, 50vw);
   }
 
   .hero-actions {
@@ -1214,5 +1240,38 @@ main#home {
 
   .nav-logo {
     font-size: 1rem;
+  }
+
+  .scroll-mouse {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 344px) {
+  .hero-photo-frame {
+    width: min(240px, 40vw);
+  }
+
+  .nav-container {
+    padding-inline: var(--space-lg);
+  }
+
+  .about-code-card {
+    margin-inline: 0;
+  }
+
+  .code-card-body {
+    padding: var(--space-xs);
+    font-size: 0.65rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .back-to-top {
+    bottom: var(--space-xs);
+    right: var(--space-sm);
   }
 }
