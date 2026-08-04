@@ -432,7 +432,7 @@ main#home {
   align-items: center;
   padding-top: var(--navbar-height);
   position: relative;
-  margin-top: var(--space-xs);
+  margin-top: var(--space-sm);
   padding-bottom: var(--safe-bottom);
 }
 
