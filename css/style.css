@@ -1213,6 +1213,8 @@ main#home {
 
   .hero section {
     padding-bottom: var(--safe-bottom);
+    min-height: calc(100dvh - var(--navbar-height));
+    padding-top: var(--navbar-height);
   }
 
   .hero-photo-frame {
