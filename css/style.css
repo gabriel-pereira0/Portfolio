@@ -1254,7 +1254,15 @@ main#home {
   }
 }
 
-@media (max-width: 344px) {
+@media (max-width: 400px) {
+  .hero-media {
+    padding-top: var(--space-md);
+  }
+
+  .hero-photo-frame {
+    width: min(240px, 40vw);
+  }
+
   .nav-container {
     padding-inline: var(--space-lg);
   }
